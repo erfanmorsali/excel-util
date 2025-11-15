@@ -44,7 +44,7 @@ public class ExcelValidator {
         }
         if (INVALID_SHEET_NAME_CHARS.matcher(sheetName).find()) {
             throw new ValidationException(
-                String.format("Sheet name '%s' contains invalid characters. Cannot use: \ / : * ? [ ]",
+                String.format("Sheet name '%s' contains invalid characters. Cannot use: \\ / : * ? [ ]",
                     sheetName)
             );
         }
