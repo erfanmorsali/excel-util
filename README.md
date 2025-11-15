@@ -38,7 +38,7 @@ public class UserDto {
 Then call `ExcelService`:
 
 ```java
-import com.excelutils.ExcelService;
+
 import java.util.List;
 import java.io.FileOutputStream;
 
@@ -47,8 +47,11 @@ List<UserDto> users = ...;
 ExcelService service = new ExcelService();
 byte[] excelBytes = service.exportToExcel(users, true);
 
-try (FileOutputStream fos = new FileOutputStream("users.xlsx")) {
-    fos.write(excelBytes);
+try(
+FileOutputStream fos = new FileOutputStream("users.xlsx")){
+        fos.
+
+write(excelBytes);
 }
 ```
 

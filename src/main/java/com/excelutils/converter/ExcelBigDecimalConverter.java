@@ -7,6 +7,7 @@ import java.math.RoundingMode;
 
 /**
  * Convert BigDecimal to rounded string (no fraction).
+ * Version 1 - Original implementation.
  */
 public class ExcelBigDecimalConverter implements ExcelField.FieldConverter {
     @Override

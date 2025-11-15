@@ -4,6 +4,7 @@ import com.excelutils.annotation.ExcelField;
 
 /**
  * Convert Boolean to Persian Yes/No.
+ * Version 1 - Original implementation.
  */
 public class ExcelBooleanConverter implements ExcelField.FieldConverter {
     @Override

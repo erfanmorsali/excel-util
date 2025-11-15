@@ -16,7 +16,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Standalone Excel export service.
+ * Excel export service - Version 1 (Original).
+ * Simple and straightforward Excel export functionality.
  */
 public class ExcelService {
 
@@ -67,7 +68,7 @@ public class ExcelService {
         Row headerRow = sheet.createRow(0);
         for (int i = 0; i < fields.size(); i++) {
             Field field = fields.get(i);
-            com.excelutils.annotation.ExcelField excelField = field.getAnnotation(com.excelutils.annotation.ExcelField.class);
+            ExcelField excelField = field.getAnnotation(ExcelField.class);
             String headerName = excelField.name().isEmpty() ? field.getName() : excelField.name();
             headerRow.createCell(i).setCellValue(headerName);
         }
@@ -81,10 +82,10 @@ public class ExcelService {
                 Field field = fields.get(j);
                 field.setAccessible(true);
                 Object value = field.get(item);
-                com.excelutils.annotation.ExcelField excelField = field.getAnnotation(com.excelutils.annotation.ExcelField.class);
+                ExcelField excelField = field.getAnnotation(ExcelField.class);
 
                 // Use the converter if specified
-                com.excelutils.annotation.ExcelField.FieldConverter converter =
+                ExcelField.FieldConverter converter =
                         excelField.converter().getDeclaredConstructor().newInstance();
                 String cellValue = converter.convert(value);
                 row.createCell(j).setCellValue(cellValue);

@@ -10,6 +10,7 @@ import java.util.Date;
 
 /**
  * Utility for generating Persian (Jalali) formatted date strings using ICU4J.
+ * Version 1 - Original implementation.
  */
 public class JalaliUtils {
 

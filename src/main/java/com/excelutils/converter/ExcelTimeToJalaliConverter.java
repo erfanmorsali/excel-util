@@ -1,12 +1,12 @@
 package com.excelutils.converter;
 
 import com.excelutils.annotation.ExcelField;
-import com.excelutils.converter.JalaliUtils;
 
 import java.time.LocalDateTime;
 
 /**
  * Convert LocalDateTime to Jalali (Persian) formatted string.
+ * Version 1 - Original implementation.
  */
 public class ExcelTimeToJalaliConverter implements ExcelField.FieldConverter {
     @Override
