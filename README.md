@@ -370,12 +370,6 @@ V2 automatically validates:
 5. **Enable parallel resize for large datasets** - Faster column sizing
 6. **Clear cache in long-running apps** - Manage memory
 
-## Additional Documentation
-
-- See `IMPROVEMENTS_V2.md` for detailed technical improvements
-- See `V2_SUMMARY.md` for implementation summary
-- See original `README.md` for V1 documentation
-
 ## License
 
 Same as main project.
