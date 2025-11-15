@@ -12,7 +12,7 @@ public class ExcelValidator {
     private static final int MAX_EXCEL_ROWS = 1_048_576;
     private static final int MAX_EXCEL_COLUMNS = 16_384;
     private static final int MAX_SHEET_NAME_LENGTH = 31;
-    private static final Pattern INVALID_SHEET_NAME_CHARS = Pattern.compile("[\\/:*?\[\]]");
+    private static final Pattern INVALID_SHEET_NAME_CHARS = Pattern.compile("[\\\\/:*?\\[\\]]");
 
     public static <T> void validateDataNotEmpty(List<T> data) throws ValidationException {
         if (data == null) {
