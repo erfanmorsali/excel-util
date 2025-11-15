@@ -38,7 +38,7 @@ public class UserDto {
 Then call `ExcelService`:
 
 ```java
-
+import com.excelutils.ExcelService;
 import java.util.List;
 import java.io.FileOutputStream;
 
@@ -47,11 +47,8 @@ List<UserDto> users = ...;
 ExcelService service = new ExcelService();
 byte[] excelBytes = service.exportToExcel(users, true);
 
-try(
-FileOutputStream fos = new FileOutputStream("users.xlsx")){
-        fos.
-
-write(excelBytes);
+try (FileOutputStream fos = new FileOutputStream("users.xlsx")) {
+    fos.write(excelBytes);
 }
 ```
 
@@ -62,7 +59,7 @@ Map<String, List<Object>> sheets = new HashMap<>();
 sheets.put("users", userList);
 sheets.put("orders", orderList);
 
-byte[] zip = service.exportToExcelWithMultipleSheets(sheets, true);
+byte[] excelBytes = service.exportToExcelWithMultipleSheets(sheets, true);
 ```
 
 ### Converters
@@ -79,6 +76,13 @@ You may implement your own converter by implementing `ExcelField.FieldConverter`
 - The library depends on Apache POI (`poi-ooxml`) and ICU4J (`icu4j`). These are declared in `pom.xml`.
 - The default date format used by the Jalali converter is `yyyy/MM/dd HH:mm:ss` and timezone `Asia/Tehran`.
 - This is a lightweight utility and does not use Spring — it's a pure Java library.
+- Sheets are set to RTL (right-to-left) by default.
+
+## Version
+
+This is Version 1 - Simple and straightforward implementation.
+
+For the improved version with caching, validation, and better error handling, see the `v2` branch.
 
 ## License
 
